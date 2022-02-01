@@ -1,0 +1,15 @@
+export enum LinksEnum {
+  MAIN = '/',
+  VESTING = '/vesting',
+  VIP_LEVELS = '/vip',
+  DEPOSIT_WITHDRAW = '/deposit',
+  // MY_ASSET = '/dashboard',
+  PRIVATE_SWAP = '/swap',
+  FARMING = '/farming',
+  REWARDS = '/rewards',
+  VOTING = '/voting',
+  CONTACT = '/contact',
+  PRIVACY = '/privacy',
+  TERMS = '/terms',
+  NOTFOUND = '*',
+}
