@@ -1,7 +1,6 @@
-import React from 'react';
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '@utils/hooks';
-import { selectAuth, clearAuthState } from '@redux/auth';
+import { clearAuthState, selectAuth } from '@redux/auth';
 import Loader from '@/components/Loader';
 
 interface IAuthLayoutProps {
@@ -18,12 +17,11 @@ export default function AuthLayoutBlock({
 
   useEffect(() => {
     if (pending) {
-      const id = setTimeout(() => {
+      timeoutlRef.current = setTimeout(() => {
         if (pending) {
           dispatch(clearAuthState());
         }
       }, 5000);
-      timeoutlRef.current = id;
     }
     return () => {
       clearTimeout(timeoutlRef.current as NodeJS.Timeout);
